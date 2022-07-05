@@ -4,7 +4,7 @@ Data analysis and visualization project based on my personal watchlist from IMDB
 In this project, my IMDB watchlist was analyzed, consisting of all the films that I watched in my life (approximately)
 
 The main criteria that were considered when identifying the final statistics:
-- Top numbers (total movies watched, most released decade, most popular director, most popular genre, most popular rating and duration intervals)
+- top numbers (total movies watched, most released decade, most popular director, most popular genre, most popular rating and duration intervals)
 - grouping by decade of release
 - grouping by project types
 - grouping by rating intervals
@@ -27,7 +27,7 @@ This project is being implemented as a training project in order to master the b
 
 ##### Tools used: Oracle SQL, PL/SQL developer and Tableau
 
--- Views of dashboards:
+###### - Views of dashboards:
 
 
 ![image](https://github.com/Wreiler/IMDB_watchlist_stats/blob/main/watchlist_work1.png)
