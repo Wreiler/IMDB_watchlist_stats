@@ -16,7 +16,7 @@ The main criteria that were considered when identifying the final statistics:
 - top 10 genres (by number of films)
 
 
-##### According to these criteria, diagrams were compiled and presented on 3 dashboards
+##### According to these criteria, visualization was compiled and presented on 3 dashboards
 
 ##### DASHBOARDS
 
@@ -45,17 +45,18 @@ ________________________________________________________________________________
 
 ### New version of this analysis
 
-The main criteria that were considered when identifying the final statistics:
-- top numbers (total movies watched, most released decade, most popular director, most popular genre, most popular rating and duration intervals)
-- grouping by decade of release
-- grouping by project types
-- grouping by rating intervals
-- grouping by duration of the motion picture
-- top 10 frequent directors (by number of films)
-- top 10 genres (by number of films)
+The updated version of the dashboard has the following types of summary visualization that interact with each other through the filter:
+- the area chart of the number of pictures watched by their release date
+- the donut chart the number of pictures by their release decade and percentage distribution
+- the donut chart the number of pictures by their runtime and percentage distribution
+- the donut chart the number of pictures by their genres and percentage distribution
+- the table grouping by project types
+- the tables / lists of pictures displayed during filtering (LIST, LIST OF MOVIES)
+- the table grouping by project directors
+- the histogram of the dependence of the films rating on the year, titles filtered by director
 
 
-##### According to these criteria, diagrams were compiled and presented on 2 dashboards
+##### According to these criteria, visualization was compiled and presented on 2 dashboards
 
 ##### DASHBOARDS
 
