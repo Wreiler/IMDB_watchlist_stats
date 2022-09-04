@@ -29,7 +29,7 @@ _____________________________________
 
 This project is being implemented as a training project in order to master the basic principles of data analysis and visualization
 
-##### Tools used: Oracle SQL, PL/SQL developer and Tableau
+##### Tools used: Oracle SQL, PL/SQL developer, Tableau and Excel
 
 ###### - Views of dashboards:
 
@@ -67,7 +67,7 @@ _____________________________________
 
 This project is being implemented as a training project in order to master the basic principles of data analysis and visualization
 
-##### Tools used: Oracle SQL, PL/SQL developer and Tableau
+##### Tools used: Oracle SQL, PL/SQL developer, Tableau and Excel
 
 ###### - Views of dashboards:
 
@@ -75,3 +75,24 @@ This project is being implemented as a training project in order to master the b
 ![image](https://github.com/Wreiler/IMDB_watchlist_stats/blob/main/watchlist_new_work1.png)
 
 ![image](https://github.com/Wreiler/IMDB_watchlist_stats/blob/main/watchlist_new_work2.png)
+
+_____________________________________________________________________________________________________
+-----------------------------------------------------------------------------------------------------
+
+### Map of watched
+
+In addition to this analysis I decided to make the dashboard with a map of all the movies and TV shows we watched, countries of origin map
+
+It's not as accurate as we would like, since many countries can participate in the production of the film. But still it can reflect the real affiliation of the film to the country
+
+Since downloading a watchlist from IMDB doen't take into account the country of origin I had to resort to parsing movie pages by their URL using Python and Jupiter Notebook for that
+
+##### DASHBOARD
+
+https://public.tableau.com/app/profile/sergei5857/viz/watchlist_new_map/COUNTRIESDASH
+
+##### Tools used: Oracle SQL, PL/SQL developer, Tableau, Jupiter Notebook, Python, pandas, BeautifulSoup and Excel
+
+###### - View of dashboard:
+
+![image](https://github.com/Wreiler/IMDB_watchlist_stats/blob/master/map_of_movies.png)
