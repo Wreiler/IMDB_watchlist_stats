@@ -95,4 +95,4 @@ https://public.tableau.com/app/profile/sergei5857/viz/watchlist_new_map/COUNTRIE
 
 ###### - View of dashboard:
 
-![image](https://github.com/Wreiler/IMDB_watchlist_stats/blob/master/map_of_movies.png)
+![image](https://github.com/Wreiler/IMDB_watchlist_stats/blob/main/map_of_movies.png)
