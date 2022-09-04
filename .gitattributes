@@ -1,2 +1,7 @@
+* text=auto eol=lf
+*.sql  text
+
 *.sql linguist-detectable=true
 *.sql linguist-language=sql
+*.pck linguist-detectable=true
+*.pck linguist-language=plsql
