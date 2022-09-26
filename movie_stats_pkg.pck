@@ -69,7 +69,7 @@ create or replace noneditionable package body movie_stats_pkg is
   
     execute immediate('
       select round(avg(t.imdb_rating), 1)
-      from smorodin_sa.watchlist t
+      from ssa.watchlist t
       '|| 'where t.directors like ''%' || director || '%''
       '|| 'and t.genres like ''%' || genre || '%''
       '|| 'and SUBSTR(t.release_year, 1, 3)||0 like ''%' || decade || '%''
@@ -79,7 +79,7 @@ create or replace noneditionable package body movie_stats_pkg is
     
     execute immediate('
       select count(*)
-      from smorodin_sa.watchlist t
+      from ssa.watchlist t
       where t.imdb_rating = ' || mc_rate)
     into cnt;
     
@@ -102,7 +102,7 @@ create or replace noneditionable package body movie_stats_pkg is
   
     execute immediate('
       select round(max(t.imdb_rating), 1)
-      from smorodin_sa.watchlist t
+      from ssa.watchlist t
       '|| 'where t.directors like ''%' || director || '%''
       '|| 'and t.genres like ''%' || genre || '%''
       '|| 'and SUBSTR(t.release_year, 1, 3)||0 like ''%' || decade || '%''
@@ -112,7 +112,7 @@ create or replace noneditionable package body movie_stats_pkg is
     
     execute immediate('
       select count(*)
-      from smorodin_sa.watchlist t
+      from ssa.watchlist t
       where t.imdb_rating = ' || h_rate)
     into cnt;
     
@@ -135,7 +135,7 @@ create or replace noneditionable package body movie_stats_pkg is
   
     execute immediate('
       select round(avg(t.runtime))
-      from smorodin_sa.watchlist t
+      from ssa.watchlist t
       '|| 'where t.directors like ''%' || director || '%''
       '|| 'and t.genres like ''%' || genre || '%''
       '|| 'and SUBSTR(t.release_year, 1, 3)||0 like ''%' || decade || '%''
@@ -145,7 +145,7 @@ create or replace noneditionable package body movie_stats_pkg is
     
     execute immediate('
       select count(*)
-      from smorodin_sa.watchlist t
+      from ssa.watchlist t
       where t.runtime = ' || mc_runtime)
     into cnt;
     
@@ -168,7 +168,7 @@ create or replace noneditionable package body movie_stats_pkg is
   
     execute immediate('
       select max(t.runtime)
-      from smorodin_sa.watchlist t
+      from ssa.watchlist t
       '|| 'where t.directors like ''%' || director || '%''
       '|| 'and t.genres like ''%' || genre || '%''
       '|| 'and SUBSTR(t.release_year, 1, 3)||0 like ''%' || decade || '%''
@@ -178,7 +178,7 @@ create or replace noneditionable package body movie_stats_pkg is
     
     execute immediate('
       select count(*)
-      from smorodin_sa.watchlist t
+      from ssa.watchlist t
       where t.runtime = ' || h_runtime)
     into cnt;
     
@@ -202,7 +202,7 @@ create or replace noneditionable package body movie_stats_pkg is
       select max(decade) keep (dense_rank first order by cnt desc), max(cnt)
       from (select t.decade, count(*) cnt
             from (select w.*, SUBSTR(w.release_year, 1, 3)||0 decade
-                  from smorodin_sa.watchlist w) t
+                  from ssa.watchlist w) t
             '|| 'where t.directors like ''%' || director || '%''
             '|| 'and t.genres like ''%' || genre || '%''
             '|| 'and t.countries like ''%' || country || '%''
@@ -236,7 +236,7 @@ create or replace noneditionable package body movie_stats_pkg is
                    t.countries,
                    trim(regexp_substr(t.genres, ''[^,]+'', 1, levels.column_value)) as genres
                  from 
-                   smorodin_sa.watchlist t,
+                   ssa.watchlist t,
                    table(cast(multiset(select level from dual connect by  level <= length (regexp_replace(t.genres, ''[^,]+''))  + 1) as sys.OdciNumberList)) levels
                  order by title) t
             '|| 'where t.directors like ''%' || director || '%''
@@ -272,7 +272,7 @@ create or replace noneditionable package body movie_stats_pkg is
                    t.countries,
                    trim(regexp_substr(t.directors, ''[^,]+'', 1, levels.column_value)) as directors
                  from 
-                   smorodin_sa.watchlist t,
+                   ssa.watchlist t,
                    table(cast(multiset(select level from dual connect by  level <= length (regexp_replace(t.directors, ''[^,]+''))  + 1) as sys.OdciNumberList)) levels
                  order by title) t
             where t.directors is not null
@@ -309,7 +309,7 @@ create or replace noneditionable package body movie_stats_pkg is
                    t.directors,
                    trim(regexp_substr(t.countries, ''[^,]+'', 1, levels.column_value)) as countries
                  from 
-                   smorodin_sa.watchlist t,
+                   ssa.watchlist t,
                    table(cast(multiset(select level from dual connect by  level <= length (regexp_replace(t.countries, ''[^,]+''))  + 1) as sys.OdciNumberList)) levels
                  order by title) t
             where t.countries is not null
@@ -332,12 +332,12 @@ create or replace noneditionable package body movie_stats_pkg is
       create or replace view summary_watched as
         select 
          (select count(*) from WATCHLIST) total_count,
-         smorodin_sa.movie_stats_pkg.most_common_rating().value || '' ('' || smorodin_sa.movie_stats_pkg.most_common_rating().count || '' titles)'' most_common_rating,
-         smorodin_sa.movie_stats_pkg.most_common_runtime().value || '' ('' || smorodin_sa.movie_stats_pkg.most_common_runtime().count || '' titles)'' most_common_runtime,
-         smorodin_sa.movie_stats_pkg.most_common_decade().value || '' ('' || smorodin_sa.movie_stats_pkg.most_common_decade().count || '' titles)'' most_common_decade,
-         smorodin_sa.movie_stats_pkg.most_common_director().value || '' ('' || smorodin_sa.movie_stats_pkg.most_common_director().count || '' titles)'' most_common_director,
-         smorodin_sa.movie_stats_pkg.most_common_genre().value || '' ('' || smorodin_sa.movie_stats_pkg.most_common_genre().count || '' titles)'' most_common_genre,
-         smorodin_sa.movie_stats_pkg.most_common_country().value || '' ('' || smorodin_sa.movie_stats_pkg.most_common_country().count || '' titles)'' most_common_country
+         ssa.movie_stats_pkg.most_common_rating().value || '' ('' || ssa.movie_stats_pkg.most_common_rating().count || '' titles)'' most_common_rating,
+         ssa.movie_stats_pkg.most_common_runtime().value || '' ('' || ssa.movie_stats_pkg.most_common_runtime().count || '' titles)'' most_common_runtime,
+         ssa.movie_stats_pkg.most_common_decade().value || '' ('' || ssa.movie_stats_pkg.most_common_decade().count || '' titles)'' most_common_decade,
+         ssa.movie_stats_pkg.most_common_director().value || '' ('' || ssa.movie_stats_pkg.most_common_director().count || '' titles)'' most_common_director,
+         ssa.movie_stats_pkg.most_common_genre().value || '' ('' || ssa.movie_stats_pkg.most_common_genre().count || '' titles)'' most_common_genre,
+         ssa.movie_stats_pkg.most_common_country().value || '' ('' || ssa.movie_stats_pkg.most_common_country().count || '' titles)'' most_common_country
         from dual
     ');
     
