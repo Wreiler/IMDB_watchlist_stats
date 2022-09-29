@@ -3,49 +3,12 @@ Data analysis and visualization project based on my personal watchlist from IMDB
 
 In this project, my IMDB watchlist was analyzed, consisting of all the films that I watched in my life (approximately)
 
-
-### Old version of this analysis
-
-The main criteria that were considered when identifying the final statistics:
-- top numbers (total movies watched, most released decade, most popular director, most popular genre, most popular rating and duration intervals)
-- grouping by decade of release
-- grouping by project types
-- grouping by rating intervals
-- grouping by duration of the motion picture
-- top 10 frequent directors (by number of films)
-- top 10 genres (by number of films)
-
-
-##### According to these criteria, visualization was compiled and presented on 3 dashboards
-
-##### DASHBOARDS
-
-https://public.tableau.com/app/profile/sergei5857/viz/Watchlist_dashboard_1/Dashboard1
-
-https://public.tableau.com/app/profile/sergei5857/viz/Watchlist_dashboard_2/Dashboard2
-
-https://public.tableau.com/app/profile/sergei5857/viz/Watchlist_dashboard_3/Dashboard3
-_____________________________________
-
-This project is being implemented as a training project in order to master the basic principles of data analysis and visualization
-
-##### Tools used: Oracle SQL, PL/SQL developer, Tableau and Excel
-
-###### - Views of dashboards:
-
-
-![image](https://github.com/Wreiler/IMDB_watchlist_stats/blob/main/watchlist_work1.png)
-
-![image](https://github.com/Wreiler/IMDB_watchlist_stats/blob/main/watchlist_work2.png)
-
-![image](https://github.com/Wreiler/IMDB_watchlist_stats/blob/main/watchlist_work3.png)
-
 _____________________________________________________________________________________________________
 -----------------------------------------------------------------------------------------------------
 
 ### New version of this analysis
 
-The updated version of the dashboard has the following types of summary visualization that interact with each other through the filter:
+These dashboards have the following types of summary visualization that interact with each other through the filter:
 - the area chart of the number of pictures watched by their release date
 - the donut chart the number of pictures by their release decade and percentage distribution
 - the donut chart the number of pictures by their runtime and percentage distribution
