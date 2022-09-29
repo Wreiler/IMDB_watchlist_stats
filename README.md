@@ -59,3 +59,16 @@ https://public.tableau.com/app/profile/sergei5857/viz/watchlist_new_map/COUNTRIE
 ###### - View of dashboard:
 
 ![image](https://github.com/Wreiler/IMDB_watchlist_stats/blob/main/map_of_movies.png)
+
+_____________________________________________________________________________________________________
+-----------------------------------------------------------------------------------------------------
+
+### Python script for setting the entire procedure to autorun on a schedule
+
+-
+
+##### Tools used: Oracle database, Oracle SQL, Tableau, Jupiter Notebook, Python (libs: pandas, BeautifulSoup, cx_Oracle, logging) and Excel
+
+###### - Python script
+
+[https://github.com/Wreiler/IMDB_watchlist_stats/blob/main/parse_and_insert_oracle.py](https://github.com/Wreiler/IMDB_watchlist_stats/blob/main/parse_and_insert_oracle.py)
