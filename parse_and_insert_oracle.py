@@ -40,9 +40,9 @@ def load_from_IMBD():
     print('\nUnloading from IMDB is completed.')
 
 def parse_and_insert():
-    # get the new list and current list dataframes
     global trigger
-
+    
+    # get the new list and current list dataframes
     wl_imdb_df = pd.read_csv('C:\BASE\Code\IMDb_WL_research\WATCHLIST.csv').iloc[:, 5:]
     del wl_imdb_df['Num Votes']
     cols = wl_imdb_df.columns.tolist()
