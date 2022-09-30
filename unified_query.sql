@@ -19,13 +19,16 @@ select org.title,
        org.release_year,
        org.decade,
        res.genre,
-       res.director
+       res.director,
+       res.country
 from (select distinct t.title,
              trim(regexp_substr(t.directors, '[^,]+', 1, levels_1.column_value))  as director,
-             trim(regexp_substr(t.genres, '[^,]+', 1, levels_2.column_value))  as genre
+             trim(regexp_substr(t.genres, '[^,]+', 1, levels_2.column_value))  as genre,
+             trim(regexp_substr(t.countries, '[^,]+', 1, levels_3.column_value))  as country
       from origin t,
            table(cast(multiset(select level from dual connect by  level <= length (regexp_replace(t.directors, '[^,]+'))  + 1) as sys.OdciNumberList)) levels_1,
-           table(cast(multiset(select level from dual connect by  level <= length (regexp_replace(t.genres, '[^,]+'))  + 1) as sys.OdciNumberList)) levels_2
+           table(cast(multiset(select level from dual connect by  level <= length (regexp_replace(t.genres, '[^,]+'))  + 1) as sys.OdciNumberList)) levels_2,
+           table(cast(multiset(select level from dual connect by  level <= length (regexp_replace(t.countries, '[^,]+'))  + 1) as sys.OdciNumberList)) levels_3
        order by title) res,
       origin org
 where org.title = res.title;
