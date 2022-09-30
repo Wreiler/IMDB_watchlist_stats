@@ -65,9 +65,22 @@ ________________________________________________________________________________
 
 ### Python script for setting the entire procedure to autorun on a schedule
 
--
+To automate the uploading and getting the final dataset for the dashboard, I created a python script
 
-##### Tools used: Oracle database, Oracle SQL, Tableau, Jupiter Notebook, Python (libs: pandas, BeautifulSoup, cx_Oracle, logging) and Excel
+It does these following steps:
+1) load the watchlist into csv file from IMDB
+2) find a difference between the new list and current list (only new items)
+3) parse countries for each new item
+4) merge new rows with countries into the main table in the database
+5) select unified SQL query for the dashboard
+6) save the results into excel file that connected to Tableau
+
+- this application also keeps logs of this operation and writes them to the .log file
+
+      
+                      Launch of this python app is scheduled every 2 weeks by TaskTillDawn, it also shows logs after that
+
+##### Tools used: Oracle database, Oracle SQL, Tableau, Jupiter Notebook, Python (libs: pandas, BeautifulSoup, cx_Oracle, logging), TaskTillDawn and Excel
 
 ###### - Python script
 
