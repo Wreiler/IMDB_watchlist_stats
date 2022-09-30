@@ -78,7 +78,7 @@ It does these following steps:
 - this application also keeps logs of this operation and writes them to the .log file
 
       
-        Launch of this python app is scheduled every 2 weeks by TaskTillDawn, it also shows logs after that
+####### Launch of this python app is scheduled every 2 weeks by TaskTillDawn, it also shows logs after that
 
 ##### Tools used: Oracle database, Oracle SQL, Tableau, Jupiter Notebook, Python (libs: pandas, BeautifulSoup, cx_Oracle, logging), TaskTillDawn and Excel
 
