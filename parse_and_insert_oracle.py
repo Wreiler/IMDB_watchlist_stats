@@ -36,8 +36,8 @@ def load_from_IMBD():
     file_object = requests.get(file_url)
     with open('C:\BASE\Code\IMDb_WL_research\WATCHLIST.csv', 'wb') as local_file:
         local_file.write(file_object.content)
-    logger.info('Unloading from IMDB is completed')
-    print('\nUnloading from IMDB is completed.')
+    logger.info('Unloading .csv from IMDB is completed')
+    print('\nUnloading .csv from IMDB is completed.')
 
 def parse_and_insert():
     global trigger
@@ -87,8 +87,8 @@ def parse_and_insert():
         print(cnt, ', '.join(countries_of_made))
         list_of_countries.append(', '.join(countries_of_made))
 
-    logger.info('All counties is parsed.')
-    print('\nAll counties is parsed.')
+    logger.info('All counties are parsed.')
+    print('\nAll counties are parsed.')
     #------------
 
     # create the countries series and add the right indexes
@@ -116,8 +116,8 @@ def parse_and_insert():
         cur.executemany(sqlTxt, dataInsertionTuples)
 
         rowCount = cur.rowcount
-        logger.info("Number of inserted rows =" + str(rowCount))
-        print("\nNumber of inserted rows =", rowCount)
+        logger.info("Number of inserted rows = " + str(rowCount))
+        print("\nNumber of inserted rows = ", rowCount)
 
         # commit the changes
         conn.commit()
@@ -132,8 +132,8 @@ def parse_and_insert():
 
             # close the connection object also
             conn.close()
-    logger.info("Inserting is completed!")
-    print("Inserting is complete!")
+    logger.info("Insert is completed!")
+    print("Insert is completed!")
     #------------
 
 def select_and_save():
@@ -177,8 +177,8 @@ def select_and_save():
                                         origin org
                                     where org.title = res.title""", conn)
 
-        logger.info("Number of selected rows =" + str(len(query_df)))
-        print("\nNumber of selected rows =", len(query_df))
+        logger.info("Number of selected rows = " + str(len(query_df)))
+        print("\nNumber of selected rows = ", len(query_df))
 
     except Exception as err:
         logger.error('Error while connecting to the db:\n' + str(err))
@@ -188,8 +188,8 @@ def select_and_save():
         if(conn):
             # close the connection object also
             conn.close()
-    logger.info("Execution complete!")
-    print("Execution complete!")
+    logger.info("Select is completed!")
+    print("Select is completed!")
     #------------
 
     # configure date column in the dataframe
