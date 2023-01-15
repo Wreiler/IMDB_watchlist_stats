@@ -85,3 +85,14 @@ It does these following steps:
 ###### - Python script
 
 [https://github.com/Wreiler/IMDB_watchlist_stats/blob/main/parse_and_insert_oracle.py](https://github.com/Wreiler/IMDB_watchlist_stats/blob/main/parse_and_insert_oracle.py)
+
+
+##### Example of logs:
+-----[INFO]: New unloading from IMDB - 07.01.2023----- <br/>
+[07.01.2023 19:00:18 | INFO]: Unloading .csv from IMDB is completed <br/>
+[07.01.2023 19:00:20 | INFO]: All counties are parsed. <br/>
+[07.01.2023 19:00:20 | INFO]: Number of inserted rows = 2 <br/>
+[07.01.2023 19:00:20 | INFO]: Insert is completed! <br/>
+[07.01.2023 19:00:21 | INFO]: Number of selected rows = 8629 <br/>
+[07.01.2023 19:00:21 | INFO]: Select is completed! <br/>
+[07.01.2023 19:00:24 | INFO]: DataFrame is written to Tableau Excel File successfully. All is done! <br/>
